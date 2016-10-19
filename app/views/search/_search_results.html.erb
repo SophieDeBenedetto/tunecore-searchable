@@ -11,9 +11,9 @@
     <% songs.each.with_index(1) do |song, i| %>
     <tr>
         <td><%= i %></td>
-        <td><%= song.title %></td>
-        <td><%= song.artist.name if song.artist %></td>
-        <td><%= song.album.title if song.album %></td>
+        <td><%= link_to song.title, song_path(song) %></td>
+        <td><%= link_to song.artist.name, artist_path(song.artist) if song.artist %></td>
+        <td><%= link_to song.album.title, album_path(song.album) if song.album %></td>
     </tr>
     <% end %>
   </tbody>

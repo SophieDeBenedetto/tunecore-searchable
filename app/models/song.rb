@@ -18,6 +18,7 @@ class Song < ApplicationRecord
   end
 
   def self.search_by_artist(term)
+    # SELECT * FROM SONGS INNER JOIN artists ON artists.id = songs.artist_id WHERE artists.name LIKE term
     Song.joins(:artist).where('artists.name ILIKE?', "%#{term}%")
   end
 

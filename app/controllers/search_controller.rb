@@ -3,7 +3,7 @@ class SearchController < ApplicationController
   def create
     @songs = Search.new(search_params).execute
     respond_to do |f|
-      f.js
+      f.json
     end
   end
 

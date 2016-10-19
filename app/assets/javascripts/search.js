@@ -10,7 +10,11 @@ function submitSearch() {
        $.ajax({
         url: '/search',
         method: 'POST',
-        data: $("[data-id='form']").serialize()
+        dataType: 'json',
+        data: $("[data-id='form']").serialize(), 
+        success: function(response) {
+          debugger
+        }
        })
      }
   });

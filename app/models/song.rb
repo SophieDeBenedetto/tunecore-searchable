@@ -2,6 +2,8 @@ class Song < ApplicationRecord
   belongs_to :artist
   belongs_to :album
 
+  validates :title, presence: true
+
   def self.agnostic_search(term)
     Array.new.tap do |songs|
       songs += Song.where('title ILIKE ?', "%#{term}%")

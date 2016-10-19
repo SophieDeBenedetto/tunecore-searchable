@@ -1,0 +1,5 @@
+<div class="col-lg-12">
+  <h1><%= @song.title %></h1>
+  <p><%= link_to @song.artist.name, artist_path(@song.artist) %></p>
+  <p>album: <%= link_to @song.album.title, album_path(@song.album) %></p>
+</div>

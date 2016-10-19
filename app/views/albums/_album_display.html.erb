@@ -1,0 +1,7 @@
+<div class="col-lg-6">
+  <%= image_tag album.image_url, style: 'height: 400px; width: 400px' %>
+</div>
+<div class="col-lg-6">
+  <h2><%= album.title %></h2>
+  <%= render partial: 'songs/song_table', locals: {songs: album.songs} %>
+</div>

@@ -1,0 +1,8 @@
+<div class="col-lg-12">
+  <ul class="list-group">
+  <% items.all.each do |item| %>
+    <li class="list-group-item">
+      <%= link_to item.send(method), item %>
+    </li>
+  <% end %>
+</div>

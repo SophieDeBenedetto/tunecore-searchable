@@ -5,6 +5,7 @@ $(function() {
 function submitSearch() {
   $("[data-search='input']").keydown(function(event) {
     //event.preventDefault();
+    debugger;
     if (event.keyCode == 13) {
        var data = $("[data-search='input']").val();
        $.ajax({

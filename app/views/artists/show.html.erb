@@ -1,0 +1,8 @@
+<div class="col-lg-12">
+    <h1><%= @artist.name %></h1>
+
+
+  <% @artist.albums.each do |album| %>
+    <%= render partial: 'albums/album_display', locals: {album: album} %>
+  <% end %>
+</div>

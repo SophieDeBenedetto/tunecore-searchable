@@ -1,16 +1,15 @@
 class SearchController < ApplicationController
 
   def create
-    songs = Search.execute(search_params[:term])
-    binding.pry
+    @songs = Search.new(search_params).execute
     respond_to do |f|
-      f.json {render json: songs}
+      f.js
     end
   end
 
   private
 
     def search_params
-      params.require(:search).permit(:term)
+      params.require(:search).permit(all: [:term], artist: [:term], song: [:term], album: [:term])
     end
 end

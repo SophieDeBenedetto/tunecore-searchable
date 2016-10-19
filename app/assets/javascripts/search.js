@@ -17,18 +17,13 @@ function searchFormToggle() {
 
 function submitSearch() {
   $("[data-search='input']").keydown(function(event) {
-    event.preventDefault();
-    event.stopPropagation();
+    //event.preventDefault();
     if (event.keyCode == 13) {
        var data = $("[data-search='input']").val();
        $.ajax({
         url: '/search',
         method: 'POST',
-        dataType: 'json',
-        data: $("[data-id='form']") .serialize(),
-        success: function(response) {
-          debugger;
-        }
+        data: $("[data-id='form']").serialize()
        })
      }
   });

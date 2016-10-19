@@ -1,1 +1,20 @@
-_search_results.html.erb
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>song title</th>
+      <th>artist</th>
+      <th>album</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% songs.each.with_index(1) do |song, i| %>
+    <tr>
+        <td><%= i %></td>
+        <td><%= song.title %></td>
+        <td><%= song.artist.name if song.artist %></td>
+        <td><%= song.album.title if song.album %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table> 

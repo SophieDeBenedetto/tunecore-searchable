@@ -21,3 +21,4 @@ A Rails implementation of a fuzzy search for songs by any combination of song ti
 * Search feature uses Active Job, with the SideKiq adapter, backed by Redis in production, to execute search against database. 
 * Search methods are wrapped in a `Search` service class, found in `app/servics/search.rb`.
 * Responsive UI implemented with Bootstrap and Bootswatch.
+* RSpec tests for models and job; RSpec + Capybara for feature testing of search functionality. 

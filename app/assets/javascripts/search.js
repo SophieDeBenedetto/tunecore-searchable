@@ -27,7 +27,7 @@ function renderSearchResultTable(songs) {
   var tableClosing = '</tbody></table>'
   
   var tableRows = songs.map(function(song, i) {
-    return `<tr><td>${i + 1}</td><td>${song.title}</td><td>${song.artist.name}</td><td>${song.album.title}</td></tr>`
+    return `<tr><td>${i + 1}</td><td>${song.title}</td><td>${song.artist? song.artist.name : ''}</td><td>${song.album.title}</td></tr>`
   })
   return tableOpening + tableRows.join("") + tableClosing
 }

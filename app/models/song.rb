@@ -30,11 +30,11 @@ class Song < ApplicationRecord
   end
 
   def self.search_by_title_and_album(title, album)
-    Song.where('title ILIKE ?', "%#{title}%").joins(:album).where('albums.title ILIKE?', "%#{album}%")
+    Song.where('songs.title ILIKE ?', "%#{title}%").joins(:album).where('albums.title ILIKE?', "%#{album}%")
   end
 
   def self.search_by_title_and_artist_and_album(title, artist, album)
-    Song.where('title ILIKE ?', "%#{title}%").joins(:artist).where('artists.name ILIKE?', "%#{artist}%").joins(:album).where('albums.title ILIKE?', "%#{album}%")
+    Song.where('songs.title ILIKE ?', "%#{title}%").joins(:artist).where('artists.name ILIKE?', "%#{artist}%").joins(:album).where('albums.title ILIKE?', "%#{album}%")
   end
 
   def self.search_by_artist_and_album(artist, album)

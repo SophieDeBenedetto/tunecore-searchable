@@ -8,6 +8,10 @@ A Rails implementation of a fuzzy search for songs by any combination of song ti
 * `rake db: create; rake db:migrate; rake db:seed`
 * Run it! `rails s`
 
+## View It
+
+* check out a deployed version of this app [here](https://tunecore-challenge.herokuapp.com/)
+
 ## Technologies
 
 * Postgresql database stores songs and their associated artists and albums.

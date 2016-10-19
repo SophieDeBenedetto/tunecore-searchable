@@ -14,9 +14,7 @@ class Search
     if agnostic_term?
       execute_agnostic_search
     else
-      self.results += Song.search_by_album(@album_title) if album_title?
-      self.results += Song.search_by_artist(@artist_name) if artist_name?
-      self.results += Song.search_by_title(@song_name) if song_title?
+      execute_search_by_type
     end
     results.uniq
   end
@@ -26,6 +24,21 @@ class Search
   end
 
   def execute_search_by_type
+    if song_title? && artist_name? && album_title?
+      self.results += Song.seach_by_title_and_artist_and_album(@song_title, @artist_name, @album_title)
+    elsif song_title? && artist_name?
+      self.results += Song.search_by_title_and_artist(@song_title, @artist_name) 
+    elsif song_title? && album_title?
+      self.results += Song.search_by_title_and_album(@song_title, @album_title) 
+    elsif artist_name? && album_title?    
+      self.results += Song.search_by_artist_and_album(@artist_name, @album_title)
+    elsif album_title?
+      self.results += Song.search_by_album(@album_title)
+    elsif artist_name?     
+      self.results += Song.search_by_artist(@artist_name)
+    elsif song_title?
+      self.results += Song.search_by_title(@song_name)
+    end
   end
 
   def album_title?

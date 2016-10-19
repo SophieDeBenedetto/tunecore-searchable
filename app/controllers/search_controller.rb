@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
 
   def create
-    @songs = Search.new(search_params).execute
+    @songs = SearchJob.perform_now(search_params)
     respond_to do |f|
       f.js
     end

@@ -24,6 +24,7 @@ gem 'turbolinks', '~> 5'
 
 gem 'figaro'
 gem 'rest-client'
+gem 'sidekiq'
 
 
 group :development, :test do

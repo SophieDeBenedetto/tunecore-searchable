@@ -3,10 +3,10 @@ class Search
   attr_accessor :results
 
   def initialize(search_params)
-    @album_title = search_params[:album][:term]
-    @artist_name = search_params[:artist][:term]
-    @song_title = search_params[:song][:term]
-    @agnostic_term = search_params[:all][:term]
+    @album_title = search_params["album"]["term"]
+    @artist_name = search_params["artist"]["term"]
+    @song_title = search_params["song"]["term"]
+    @agnostic_term = search_params["all"]["term"]
     @results = []
   end
 

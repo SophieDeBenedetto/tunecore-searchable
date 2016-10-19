@@ -40,6 +40,10 @@ end
 group :test do 
   gem 'rspec-rails'
   gem 'database_cleaner'
+  gem "capybara-webkit"
+  gem "selenium"
+  gem 'selenium-webdriver'
+  gem 'launchy'
 end
 
 group :development do

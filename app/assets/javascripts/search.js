@@ -1,5 +1,5 @@
 $(function() {
-  hideSearchInput();
+  // hideSearchInput();
   searchFormToggle();
   submitSearch();
 });

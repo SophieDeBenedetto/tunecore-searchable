@@ -37,7 +37,7 @@ class Search
     elsif artist_name?     
       self.results += Song.search_by_artist(@artist_name)
     elsif song_title?
-      self.results += Song.search_by_title(@song_name)
+      self.results += Song.search_by_title(@song_title)
     end
   end
 

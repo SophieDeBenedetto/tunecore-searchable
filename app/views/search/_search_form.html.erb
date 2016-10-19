@@ -1,6 +1,6 @@
 <form class="form-horizontal" data-id="form">
   <fieldset>
-    <legend> <span class="glyphicon glyphicon-search" aria-hidden="true" data-search="icon"></span> search by artist, song or album</legend> 
+    <legend> <span class="glyphicon glyphicon-search" aria-hidden="true"  id='search-icon'></span> search by artist, song or album</legend> 
     <div class="form-group">
       <div class="col-lg-12" data-search='input'>
         <label>keyword:</label>
@@ -8,15 +8,15 @@
       </div>
       <div class="col-lg-12" data-search='input'>
         <label>song title:</label>
-        <input type="text" class="form-control" id="searchTerm" placeholder="song title" name="search[song][term]">
+        <input type="text" class="form-control" id="searchTitle" placeholder="song title" name="search[song][term]">
       </div>
       <div class="col-lg-12" data-search='input'>
         <label>artist name:</label>
-        <input type="text" class="form-control" id="searchTerm" placeholder="artist name" name="search[artist][term]">
+        <input type="text" class="form-control" id="searchArtist" placeholder="artist name" name="search[artist][term]">
       </div>
       <div class="col-lg-12" data-search='input'>
         <label>album title:</label>
-        <input type="text" class="form-control" id="searchTerm" placeholder="album title" name="search[album][term]">
+        <input type="text" class="form-control" id="searchAlbum" placeholder="album title" name="search[album][term]">
       </div>
     </div>
   </fieldset>

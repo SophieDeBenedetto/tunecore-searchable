@@ -4,6 +4,6 @@ class AlbumsController < ApplicationController
     @albums = Album.all
   end
   def show
-    @album = Album.find(params[:id])
+    @album = Album.includes(:songs, :artist).find(params[:id])
   end
 end

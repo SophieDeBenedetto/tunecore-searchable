@@ -1,6 +1,9 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
+
   submitSearch();
+
 });
+
 
 function submitSearch() {
   $("[data-search='input']").keydown(function(event) {

@@ -20,12 +20,12 @@ class Search
   end
 
   def execute_agnostic_search
-    results += Song.agnostic_search(@agnostic_term)
+    self.results += Song.agnostic_search(@agnostic_term)
   end
 
   def execute_search_by_type
     if song_title? && artist_name? && album_title?
-      self.results += Song.seach_by_title_and_artist_and_album(@song_title, @artist_name, @album_title)
+      self.results += Song.search_by_title_and_artist_and_album(@song_title, @artist_name, @album_title)
     elsif song_title? && artist_name?
       self.results += Song.search_by_title_and_artist(@song_title, @artist_name) 
     elsif song_title? && album_title?

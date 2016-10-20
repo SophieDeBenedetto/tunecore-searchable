@@ -7,8 +7,8 @@ class Song < ApplicationRecord
   def self.agnostic_search(term)
     Array.new.tap do |songs|
       songs += Song.where('title ILIKE ?', "%#{term}%")
-      songs += Song.joins(:artist).where('artists.name ILIKE?', "%#{term}%")
-      songs +=  Song.joins(:album).where('albums.title ILIKE?', "%#{term}%")
+      songs += self.search_by_artist(term)
+      songs +=  self.search_by_album(term)
       return songs
     end
   end

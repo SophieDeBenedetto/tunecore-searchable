@@ -16,9 +16,9 @@ feature "Search", :js => :true do
       visit '/'
       fill_in "search[artist][term]", with: 'Beyonce'
       find('#searchTitle').send_keys(:enter)
-      expect(page).to have_content('1 All Night')
+      expect(page).to have_content('1 Sorry')
       expect(page).to have_content('2 Hold Up')
-      expect(page).to have_content('3 Sorry')
+      expect(page).to have_content('3 All Night')
     end
   end
 
@@ -27,9 +27,9 @@ feature "Search", :js => :true do
       visit '/'
       fill_in "search[album][term]", with: 'Lemonade'
       find('#searchTitle').send_keys(:enter)
-      expect(page).to have_content('1 All Night')
+      expect(page).to have_content('1 Sorry')
       expect(page).to have_content('2 Hold Up')
-      expect(page).to have_content('3 Sorry')
+      expect(page).to have_content('3 All Night')
     end
   end
 
@@ -59,7 +59,7 @@ feature "Search", :js => :true do
       fill_in "search[artist][term]", with: 'Adele'
       fill_in "search[album][term]", with: 'Hello'
       find('#searchTitle').send_keys(:enter)
-      expect(page).to have_content('1 Hold You Adele Hello 2 Love Adele Hello 3 Hello Adele Hello')
+      expect(page).to have_content('1 Hello Adele Hello 2 Love Adele Hello 3 Hold You Adele Hello')
     end
   end
 
